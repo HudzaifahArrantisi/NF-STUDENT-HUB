@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= ROOT ================= */
+:root {
+  --instagram-gradient: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  --instagram-pink: #E4405F;
+  --twitter-blue: #1DA1F2;
+}
+
+body {
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #262626;
+}
+
+/* ================= FONT UTILS ================= */
+.font-sans {
+  font-family: 'Roboto', system-ui, sans-serif;
+}
+
+.font-instagram {
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.font-logo {
+  font-family: 'Brush Script MT', cursive;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(0); opacity: 0; }
+  15% { transform: scale(1.2); opacity: 1; }
+  30% { transform: scale(0.95); }
+  45%, 80% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+/* Animation Utilities */
+.animate-fadeIn { animation: fadeIn .3s ease-out; }
+.animate-slideUp { animation: slideUp .3s ease-out; }
+.animate-slideInRight { animation: slideInRight .3s ease-out; }
+.animate-scaleIn { animation: scaleIn .2s ease-out; }
+.animate-heartBeat { animation: heartBeat 1s ease-out; }
+.animate-pulse { animation: pulse 2s infinite; }
+
+/* ================= ASPECT RATIO ================= */
+.aspect-square { aspect-ratio: 1 / 1; }
+.aspect-4-5 { aspect-ratio: 4 / 5; }
+.aspect-9-16 { aspect-ratio: 9 / 16; }
+.aspect-video { aspect-ratio: 16 / 9; }
+
+/* ================= IMAGE CONTAINER ================= */
+.image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ================= MAX HEIGHT ================= */
+.max-h-400 { max-height: 400px; }
+.max-h-450 { max-height: 450px; }
+.max-h-500 { max-height: 500px; }
+.max-h-600 { max-height: 600px; }
+.max-h-700 { max-height: 700px; }
+.max-h-800 { max-height: 800px; }
+
+/* ================= SCROLLBAR ================= */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #dbdbdb;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================= EFFECT ================= */
+.glass {
+  background: rgba(255,255,255,.9);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+.shadow-instagram {
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+}
+
+/* ================= BUTTON ================= */
+.btn-instagram {
+  background: var(--instagram-gradient);
+  color: white;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: all .2s ease;
+}
+
+.btn-instagram:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(220,39,67,.3);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}

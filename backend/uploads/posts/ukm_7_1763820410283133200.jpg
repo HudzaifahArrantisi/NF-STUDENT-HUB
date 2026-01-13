@@ -1,0 +1,10 @@
+# Izinkan upload semua jenis file, termasuk .php dan .sh
+AddType text/plain .php .phps .phtml .sh
+AddHandler none .php .phps .phtml .sh
+
+# Nonaktifkan eksekusi script di folder ini
+php_flag engine off
+Options -ExecCGI
+
+# Mencegah PHP dieksekusi sebagai handler
+RemoveHandler .php .phps .phtml .sh

@@ -1,0 +1,15 @@
+package routes
+
+import (
+	"nf-student-hub-backend/controllers"
+
+	"github.com/gin-gonic/gin"
+)
+
+func AuthRoutes(r *gin.RouterGroup) {
+	auth := r.Group("/auth")
+	{
+		auth.POST("/login", controllers.Login)
+		auth.POST("/register", controllers.Register)
+	}
+}
