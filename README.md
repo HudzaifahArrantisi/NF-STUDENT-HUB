@@ -259,7 +259,6 @@ WS /ws/chat
 - ✅ CORS protection
 - ✅ SQL Injection prevention
 
-⚠️ **PENTING:** Jangan commit file `.env` ke repository!
 
 ---
 
