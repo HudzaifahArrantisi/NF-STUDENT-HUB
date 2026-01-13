@@ -116,7 +116,7 @@ Dengan pendekatan **role-based system**, setiap pengguna hanya dapat mengakses f
 
 ### Clone Repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/HudzaifahArrantisi/NF-STUDENT-HUB.git
 cd NF-Student-HUB
 Setup Frontend
 bash
