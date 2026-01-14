@@ -5,183 +5,173 @@
 ![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Go-orange)
 ![License](https://img.shields.io/badge/License-Academic-lightgrey)
 
-**NF StudentHub** adalah platform digital terintegrasi untuk ekosistem akademik  
-**STT Nurul Fikri**, yang menghubungkan **Mahasiswa, Dosen, Admin, Orang Tua, UKM, dan ORMAWA**  
-dalam satu sistem berbasis web yang modern, aman, dan scalable.
+**NF StudentHub** is an integrated digital platform for the academic ecosystem of  
+**STT Nurul Fikri**, connecting **Students, Lecturers, Administrators, Parents, Student Clubs (UKM), and Student Organizations (ORMAWA)**  
+into a single modern, secure, and scalable web-based system.
 
 > One platform. One ecosystem. One academic experience.
 
 ---
 
-## 📑 Daftar Isi
-- [Gambaran Umum](#-gambaran-umum)
-- [Fitur Utama](#-fitur-utama)
-- [Teknologi](#-teknologi)
-- [Instalasi](#-instalasi)
-- [Konfigurasi](#-konfigurasi)
-- [Menjalankan Aplikasi](#-menjalankan-aplikasi)
-- [Struktur Proyek](#-struktur-proyek)
-- [Role & Permission](#-role--permission)
+## 📑 Table of Contents
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Technology Stack](#-technology-stack)
+- [Installation](#-installation)
+- [Configuration](#-configuration)
+- [Running the Application](#-running-the-application)
+- [Project Structure](#-project-structure)
+- [Roles & Permissions](#-roles--permissions)
 - [API Documentation](#-api-documentation)
-- [Keamanan](#-keamanan)
-- [Kontribusi](#-kontribusi)
-- [Lisensi](#-lisensi)
+- [Security](#-security)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## 📌 Gambaran Umum
+## 📌 Overview
 
-NF StudentHub dirancang sebagai **one-stop academic platform** untuk memusatkan seluruh layanan kampus yang sebelumnya tersebar di banyak sistem.
+NF StudentHub is designed as a **one-stop academic platform** that centralizes all campus services that were previously distributed across multiple systems.
 
-Aplikasi ini mengintegrasikan:
-- Manajemen akademik
-- Sistem pembayaran
-- Absensi berbasis QR
-- Komunikasi real-time
-- Media informasi kampus (feed seperti social media)
+This platform integrates:
+- Academic management
+- Tuition and payment systems
+- QR-based attendance
+- Real-time communication
+- Campus information feed (social media–like experience)
 
-Dengan pendekatan **role-based system**, setiap pengguna hanya dapat mengakses fitur sesuai dengan perannya.
+Using a **role-based access control (RBAC)** system, each user can only access features relevant to their assigned role.
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Key Features
 
-### 🎓 Mahasiswa
-- Dashboard akademik (ringkasan nilai & kehadiran)
-- Akses materi dan tugas per mata kuliah
-- Pembayaran UKT & tracking invoice
-- Transkrip nilai & IPK
-- Scan absensi QR Code
-- Chat & notifikasi real-time
-- Profil publik mahasiswa
+### 🎓 Students
+- Academic dashboard (grades & attendance summary)
+- Access to course materials and assignments
+- Tuition (UKT) payment & invoice tracking
+- Academic transcript & GPA
+- QR Code attendance scanning
+- Real-time chat & notifications
+- Public student profile
 
-### 👨‍🏫 Dosen
-- Kelola mata kuliah & pertemuan
-- Upload materi & tugas
-- Input nilai mahasiswa
-- Generate QR absensi
-- Komunikasi dengan mahasiswa
+### 👨‍🏫 Lecturers
+- Manage courses and class sessions
+- Upload learning materials & assignments
+- Input and manage student grades
+- Generate QR codes for attendance
+- Communicate with students
 
-### 🛠️ Admin
-- Manajemen akun pengguna
-- Posting pengumuman kampus
-- Monitoring pembayaran UKT
-- Pengaturan sistem
-- Dashboard analytics
+### 🛠️ Administrators
+- User account management
+- Campus announcements
+- Tuition payment monitoring
+- System configuration
+- Analytics dashboard
 
-### 👨‍👩‍👧 Orang Tua
-- Monitoring kehadiran mahasiswa
-- Akses status pembayaran UKT
-- Notifikasi real-time
-- Akses profil akademik anak
+### 👨‍👩‍👧 Parents
+- Monitor student attendance
+- Access tuition payment status
+- Real-time notifications
+- View student academic profile
 
 ### 🏫 UKM & ORMAWA
-- Posting kegiatan & pengumuman
-- Kelola profil organisasi
-- Interaksi sosial (like & komentar)
-- Dashboard organisasi
+- Post activities and announcements
+- Manage organization profiles
+- Social interactions (likes & comments)
+- Organization dashboard
 
 ---
 
-## 🛠️ Teknologi
+## 🛠️ Technology Stack
 
 ### Frontend
-- **React 19**
-- **Vite**
-- **Tailwind CSS**
-- **React Router**
-- **React Query**
-- **Axios**
-- **GSAP**
-- **Three.js**
-- **React Icons**
+- React 19
+- Vite
+- Tailwind CSS
+- React Router
+- React Query
+- Axios
+- GSAP
+- Three.js
+- React Icons
 
 ### Backend
-- **Golang**
-- **Gin / Fiber**
-- **JWT Authentication**
-- **MySQL / PostgreSQL**
-- **WebSocket** (Real-time chat)
-- **QR Code System**
+- Golang
+- Gin / Fiber
+- JWT Authentication
+- MySQL / PostgreSQL
+- WebSocket (Real-time chat)
+- QR Code System
 
 ---
 
-## 🚀 Instalasi
+## 🚀 Installation
 
-### Prasyarat
+### Prerequisites
 - Node.js ≥ 16
 - Go ≥ 1.20
-- MySQL / PostgreSQL
-- npm / yarn
+- MySQL or PostgreSQL
+- npm or yarn
 
 ### Clone Repository
 ```bash
 git clone https://github.com/HudzaifahArrantisi/NF-STUDENT-HUB.git
 cd NF-Student-HUB
-Setup Frontend
+Frontend Setup
 bash
 Salin kode
 cd frontend
 npm install
-Setup Backend
+Backend Setup
 bash
 Salin kode
 cd backend
 go mod download
-```
+⚙️ Configuration
+Environment Variables
+Frontend
 
----
-
-## ⚙️ Konfigurasi
-
-### Environment Variables
-
-**Frontend:**
-```bash
-# Copy dan rename file .env.example menjadi .env.local
+bash
+Salin kode
 cp frontend/.env.example frontend/.env.local
-```
+Backend
 
-**Backend:**
-```bash
-# Copy dan rename file .env.example menjadi .env
+bash
+Salin kode
 cp backend/.env.example backend/.env
-```
+⚠️ Important:
 
-⚠️ **Penting:** 
-- Jangan commit file `.env` ke repository
-- Edit file `.env` dengan konfigurasi sesuai environment Anda
-- Lihat file `.env.example` untuk daftar lengkap variable yang tersedia
+Never commit .env files to the repository
 
----
+Adjust environment variables according to your setup
 
-## ▶️ Menjalankan Aplikasi
+Refer to .env.example for available configuration options
 
-### Development Mode
+▶️ Running the Application
+Development Mode
+Frontend
 
-**Frontend:**
-```bash
+bash
+Salin kode
 npm run dev
-```
-Akses: http://localhost:5173
+Access: http://localhost:5173
 
-**Backend:**
-```bash
+Backend
+
+bash
+Salin kode
 go run main.go
-```
 API: http://localhost:8080
 
-### Production
-```bash
+Production Mode
+bash
+Salin kode
 npm run build
 go build -o app
 ./app
-```
-
----
-
-## 📁 Struktur Proyek
-css
+📁 Project Structure
+bash
 Salin kode
 NF-Student-HUB/
 ├── frontend/
@@ -202,82 +192,66 @@ NF-Student-HUB/
 │   ├── handlers/
 │   └── main.go
 └── README.md
-```
+👥 Roles & Permissions
+Role	Dashboard	Academic	Chat	Payment	Admin
+Student	✅	✅	✅	✅	❌
+Lecturer	✅	✅	✅	❌	❌
+Admin	✅	✅	✅	✅	✅
+Parent	✅	✅	✅	✅	❌
+UKM	✅	❌	✅	❌	✅
+ORMAWA	✅	❌	✅	❌	✅
 
----
-
-## 👥 Role & Permission
-
-| Role | Dashboard | Akademik | Chat | Payment | Admin |
-|------|-----------|----------|------|---------|-------|
-| Mahasiswa | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Dosen | ✅ | ✅ | ✅ | ❌ | ❌ |
-| Admin | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Orang Tua | ✅ | ✅ | ✅ | ✅ | ❌ |
-| UKM | ✅ | ❌ | ✅ | ❌ | ✅ |
-| ORMAWA | ✅ | ❌ | ✅ | ❌ | ✅ |
-
----
-
-## 📚 API Documentation
-
-### Auth
-```http
+📚 API Documentation
+Authentication
+http
+Salin kode
 POST /api/auth/login
 POST /api/auth/register
 POST /api/auth/refresh
-```
-
-### Mahasiswa
-```http
+Student
+http
+Salin kode
 GET  /api/mahasiswa/profile
 GET  /api/mahasiswa/nilai
 POST /api/mahasiswa/pembayaran-ukt
-```
-
-### Dosen
-```http
+Lecturer
+http
+Salin kode
 POST /api/dosen/matkul/:id/tugas
 PUT  /api/dosen/penilaian/:id
-```
-
-### Chat
-```http
+Chat
+http
+Salin kode
 WS /ws/chat
-```
+📂 Full details available in /backend/routes
 
-📂 **Detail lengkap:** Lihat `/backend/routes`
+🔐 Security
+JWT Authentication
 
----
+Password hashing (bcrypt)
 
-## 🔐 Keamanan
+Role-Based Access Control (RBAC)
 
-- ✅ JWT Authentication
-- ✅ Password hashing (bcrypt)
-- ✅ Role-Based Access Control (RBAC)
-- ✅ Input validation
-- ✅ CORS protection
-- ✅ SQL Injection prevention
+Input validation
 
+CORS protection
 
----
+SQL Injection prevention
 
-## 🤝 Kontribusi
+🤝 Contributing
+Fork the repository
 
-1. Fork repository
-2. Buat branch fitur (`git checkout -b feature/AmazingFeature`)
-3. Commit sesuai convention (`git commit -m 'feat: Add AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
+Create a feature branch (git checkout -b feature/AmazingFeature)
 
----
+Commit following conventions (git commit -m 'feat: Add AmazingFeature')
 
-## 📄 Lisensi
+Push to your branch (git push origin feature/AmazingFeature)
 
-Proyek ini dibuat untuk keperluan akademik.  
-Penggunaan komersial memerlukan izin resmi.
+Open a Pull Request
 
----
+📄 License
+This project is developed for academic purposes.
+Commercial use requires official permission.
 
-**Last Updated:** Januari 2026  
-**Version:** 1.0.0
+Last Updated: January 2026
+Version: 1.0.0
