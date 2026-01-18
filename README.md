@@ -86,18 +86,6 @@ Tampilan antarmuka aplikasi NF StudentHub:
 
 ### Landing Page & Umum
 ![Landing Page](frontend/src/assets/image.png)
-
-### Fitur Lainnya
-| Screenshot 1 | Screenshot 2 |
-|---|---|
-| ![Gambar 1](frontend/src/assets/gambar1.png) | ![Gambar 2](frontend/src/assets/gambar2.png) |
-
-| Screenshot 3 | Screenshot 4 | Screenshot 5 |
-|---|---|---|
-| ![Gambar 3](frontend/src/assets/gambar3.png) | ![Gambar 4](frontend/src/assets/gambar4.png) | ![Gambar 5](frontend/src/assets/gambar5.png) |
-
-💡 **Tips**: Letakkan screenshot tambahan di folder `frontend/src/assets/` dan referensikan di README dengan path `frontend/src/assets/nama-file.png`.
-
 ---
 
 ## 🛠️ Teknologi
