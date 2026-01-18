@@ -80,41 +80,27 @@ Sistem berbasis role memastikan setiap pengguna hanya mengakses fitur sesuai per
 
 ---
 
-## � Screenshots
+## 📸 Screenshots
 
 Tampilan antarmuka aplikasi NF StudentHub:
 
-### Landing Page
-![Landing Page](docs/images/common/landing-page.png)
+### Landing Page & Umum
+![Landing Page](frontend/src/assets/image.png)
 
-### Authentication
-| Login | Register |
-|-------|----------|
-| ![Login](docs/images/auth/login.png) | ![Register](docs/images/auth/register.png) |
-
-### Mahasiswa
-| Dashboard | Courses | Attendance |
-|-----------|---------|-----------|
-| ![Dashboard](docs/images/mahasiswa/dashboard.png) | ![Courses](docs/images/mahasiswa/courses.png) | ![Attendance](docs/images/mahasiswa/attendance.png) |
-
-### Dosen
-| Dashboard | Upload Materi | Grade Students |
-|-----------|---------------|----------------|
-| ![Dashboard](docs/images/dosen/dashboard.png) | ![Upload](docs/images/dosen/upload-materi.png) | ![Grade](docs/images/dosen/grade-students.png) |
-
-### Admin
-| Dashboard | UKT Monitoring |
-|-----------|----------------|
-| ![Dashboard](docs/images/admin/dashboard.png) | ![UKT](docs/images/admin/ukt-monitoring.png) |
-
-### Chat & Feed
-| Chat Interface | Feed Posts |
+### Fitur Lainnya
+| Screenshot 1 | Screenshot 2 |
 |---|---|
-| ![Chat](docs/images/chat/chat-interface.png) | ![Feed](docs/images/common/feed.png) |
+| ![Gambar 1](frontend/src/assets/gambar1.png) | ![Gambar 2](frontend/src/assets/gambar2.png) |
 
-📂 **Panduan**: Lihat [docs/SCREENSHOTS.md](docs/SCREENSHOTS.md) untuk detail cara mengambil screenshot.
+| Screenshot 3 | Screenshot 4 | Screenshot 5 |
+|---|---|---|
+| ![Gambar 3](frontend/src/assets/gambar3.png) | ![Gambar 4](frontend/src/assets/gambar4.png) | ![Gambar 5](frontend/src/assets/gambar5.png) |
+
+💡 **Tips**: Letakkan screenshot tambahan di folder `frontend/src/assets/` dan referensikan di README dengan path `frontend/src/assets/nama-file.png`.
 
 ---
+
+## 🛠️ Teknologi
 
 ### Frontend
 - React 19
