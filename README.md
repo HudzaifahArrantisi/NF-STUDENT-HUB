@@ -9,25 +9,6 @@ NF StudentHub adalah platform digital terintegrasi untuk ekosistem akademik STT 
 
 > One platform. One ecosystem. One academic experience.
 
----
-
-## 📑 Daftar Isi
-- Gambaran Umum
-- Fitur Utama
-- Screenshots
-- Teknologi
-- Instalasi
-- Konfigurasi
-- Menjalankan Aplikasi
-- Struktur Proyek
-- Role & Permission
-- Ringkasan API
-- Keamanan
-- Kontribusi
-- Lisensi
-
----
-
 ## 📌 Gambaran Umum
 
 NF StudentHub dirancang sebagai one-stop academic platform untuk memusatkan layanan kampus:
