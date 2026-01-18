@@ -203,7 +203,7 @@ func createPakasirTransaction(invoiceUUID string, amount int64, paymentMethod st
 	// Ambil konfigurasi dari environment
 	apiKey := os.Getenv("PAKASIR_API_KEY")
 	if apiKey == "" {
-		apiKey = "3jQM5o8jqXAsDMe11c1pY8hwjiZVBljo"
+		apiKey = "API KEY PUNYA LU PADA"
 	}
 	
 	slug := os.Getenv("PAKASIR_SLUG")
@@ -561,7 +561,7 @@ func CancelPayment(c *gin.Context) {
 func cancelPakasirTransaction(orderID string, amount int64) {
 	apiKey := os.Getenv("PAKASIR_API_KEY")
 	if apiKey == "" {
-		apiKey = "3jQM5o8jqXAsDMe11c1pY8hwjiZVBljo"
+		apiKey = "API KEY PUNYA LU PADA"
 	}
 	
 	slug := os.Getenv("PAKASIR_SLUG")
