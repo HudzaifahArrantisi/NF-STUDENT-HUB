@@ -5,49 +5,45 @@
 ![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Go-orange)
 ![License](https://img.shields.io/badge/License-Academic-lightgrey)
 
-**NF StudentHub** adalah platform digital terintegrasi untuk ekosistem akademik  
-**STT Nurul Fikri**, yang menghubungkan **Mahasiswa, Dosen, Admin, Orang Tua, UKM, dan ORMAWA**  
-dalam satu sistem berbasis web yang modern, aman, dan scalable.
+NF StudentHub adalah platform digital terintegrasi untuk ekosistem akademik STT Nurul Fikri, yang menghubungkan Mahasiswa, Dosen, Admin, Orang Tua, UKM, dan ORMAWA dalam satu sistem web yang modern, aman, dan scalable.
 
 > One platform. One ecosystem. One academic experience.
 
 ---
 
 ## 📑 Daftar Isi
-- [Gambaran Umum](#-gambaran-umum)
-- [Fitur Utama](#-fitur-utama)
-- [Teknologi](#-teknologi)
-- [Instalasi](#-instalasi)
-- [Konfigurasi](#-konfigurasi)
-- [Menjalankan Aplikasi](#-menjalankan-aplikasi)
-- [Struktur Proyek](#-struktur-proyek)
-- [Role & Permission](#-role--permission)
-- [API Documentation](#-api-documentation)
-- [Keamanan](#-keamanan)
-- [Kontribusi](#-kontribusi)
-- [Lisensi](#-lisensi)
+- Gambaran Umum
+- Fitur Utama
+- Teknologi
+- Instalasi
+- Konfigurasi
+- Menjalankan Aplikasi
+- Struktur Proyek
+- Role & Permission
+- Ringkasan API
+- Keamanan
+- Kontribusi
+- Lisensi
 
 ---
 
-## 📌 Overview
+## 📌 Gambaran Umum
 
-NF StudentHub dirancang sebagai **one-stop academic platform** untuk memusatkan seluruh layanan kampus yang sebelumnya tersebar di banyak sistem.
+NF StudentHub dirancang sebagai one-stop academic platform untuk memusatkan layanan kampus:
+- Manajemen akademik (mata kuliah, pertemuan, nilai)
+- Sistem pembayaran UKT dengan invoice & status
+- Absensi berbasis QR (dosen dan mahasiswa)
+- Komunikasi real-time via WebSocket
+- Media informasi kampus (feed ala sosial media)
 
-Aplikasi ini mengintegrasikan:
-- Manajemen akademik
-- Sistem pembayaran
-- Absensi berbasis QR
-- Komunikasi real-time
-- Media informasi kampus (feed seperti social media)
-
-Dengan pendekatan **role-based system**, setiap pengguna hanya dapat mengakses fitur sesuai dengan perannya.
+Sistem berbasis role memastikan setiap pengguna hanya mengakses fitur sesuai perannya.
 
 ---
 
-## ✨ Key Features
+## ✨ Fitur Utama
 
 ### 🎓 Mahasiswa
-- Dashboard akademik (ringkasan nilai & kehadiran)
+- Dashboard akademik (nilai & kehadiran)
 - Akses materi dan tugas per mata kuliah
 - Pembayaran UKT & tracking invoice
 - Transkrip nilai & IPK
@@ -55,78 +51,77 @@ Dengan pendekatan **role-based system**, setiap pengguna hanya dapat mengakses f
 - Chat & notifikasi real-time
 - Profil publik mahasiswa
 
-### 👨‍🏫 Lecturers
-- Manage courses and class sessions
-- Upload learning materials & assignments
-- Input and manage student grades
-- Generate QR codes for attendance
-- Communicate with students
+### 👨‍🏫 Dosen
+- Kelola mata kuliah & pertemuan
+- Upload materi & tugas
+- Input nilai mahasiswa
+- Generate QR absensi
+- Komunikasi dengan mahasiswa
 
-### 🛠️ Administrators
-- User account management
-- Campus announcements
-- Tuition payment monitoring
-- System configuration
-- Analytics dashboard
+### 🛠️ Admin
+- Manajemen akun pengguna
+- Posting pengumuman kampus
+- Monitoring pembayaran UKT
+- Pengaturan sistem
+- Dashboard analytics
 
-### 👨‍👩‍👧 Parents
-- Monitor student attendance
-- Access tuition payment status
-- Real-time notifications
-- View student academic profile
+### 👨‍👩‍👧 Orang Tua
+- Monitoring kehadiran mahasiswa
+- Akses status pembayaran UKT
+- Notifikasi real-time
+- Akses profil akademik anak
 
 ### 🏫 UKM & ORMAWA
-- Post activities and announcements
-- Manage organization profiles
-- Social interactions (likes & comments)
-- Organization dashboard
+- Posting kegiatan & pengumuman
+- Kelola profil organisasi
+- Interaksi sosial (like & komentar)
+- Dashboard organisasi
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ Teknologi
 
 ### Frontend
-- **React 19**
-- **Vite**
-- **Tailwind CSS**
-- **React Router**
-- **React Query**
-- **Axios**
-- **GSAP**
-- **Three.js**
-- **React Icons**
+- React 19
+- Vite 7
+- Tailwind CSS
+- React Router 7
+- TanStack React Query 5
+- Axios
+- GSAP
+- Three.js
+- MUI + Emotion
+- React Icons / Lucide
 
 ### Backend
-- **Golang**
-- **Gin / Fiber**
-- **JWT Authentication**
-- **MySQL / PostgreSQL**
-- **WebSocket** (Real-time chat)
-- **QR Code System**
+- Go 1.24
+- Gin (HTTP framework)
+- GORM + MySQL
+- JWT Authentication (HS256)
+- Gorilla/WebSocket (real-time chat)
+- godotenv (env loader)
 
 ---
 
-## 🚀 Installation
+## 🚀 Instalasi
 
 ### Prasyarat
-- Node.js ≥ 16
-- Go ≥ 1.20
-- MySQL / PostgreSQL
-- npm / yarn
+- Node.js ≥ 18
+- Go ≥ 1.20 (disarankan 1.24)
+- MySQL 5.7/8.0
+- npm (atau yarn/pnpm)
 
 ### Clone & Setup
 ```bash
 git clone https://github.com/HudzaifahArrantisi/NF-STUDENT-HUB.git
 cd NF-Student-HUB
-Setup Frontend
-bash
-Salin kode
+
+# Frontend
 cd frontend
 npm install
-Setup Backend
-bash
-Salin kode
-cd backend
+
+# Backend
+cd ../backend
 go mod download
 ```
 
@@ -134,55 +129,69 @@ go mod download
 
 ## ⚙️ Konfigurasi
 
-### Environment Variables
+### Backend (.env)
+Buat file `.env` di folder backend dan isi minimal:
+```env
+# Koneksi database (contoh lokal)
+DB_DSN=root:@tcp(127.0.0.1:3306)/nf_student_hub3?parseTime=true
 
-**Frontend:**
-```bash
-# Copy dan rename file .env.example menjadi .env.local
-cp frontend/.env.example frontend/.env.local
+# JWT
+JWT_SECRET=ubah_ini_dengan_secret_yang_kuat
+
+# Banner ASCII opsional
+NAMA=NF StudentHub
 ```
 
-**Backend:**
+Catatan:
+- Jika `DB_DSN` kosong, backend memakai default: `root:@tcp(127.0.0.1:3306)/nf_student_hub3?parseTime=true`.
+- Direktori upload otomatis dibuat: `uploads/posts`, `uploads/materi`, `uploads/tugas`, `uploads/tugasdosen`, `uploads/profile`.
+- Static file dapat diakses melalui `/uploads/...` (misal: `http://localhost:8080/uploads/materi/...`).
+
+### Frontend
+- Base API default: `http://localhost:8080`. Ubah di [frontend/src/services/api.js](frontend/src/services/api.js).
+- Dev server Vite berjalan di: `http://localhost:5173`.
+
+### CORS
+Origin pengembangan yang diizinkan:
+- http://localhost:5173 (Vite)
+- http://localhost:3000
+
+Konfigurasi CORS ada di backend (gin-contrib/cors) dan middleware.
+
+---
+
+## ▶️ Menjalankan Aplikasi
+
+### Development
 ```bash
-# Copy dan rename file .env.example menjadi .env
-cp backend/.env.example backend/.env
-```
-
-⚠️ **Penting:** 
-- Jangan commit file `.env` ke repository
-- Edit file `.env` dengan konfigurasi sesuai environment Anda
-- Lihat file `.env.example` untuk daftar lengkap variable yang tersedia
-
-Adjust environment variables according to your setup
-
-Refer to .env.example for available configuration options
-
-### Development Mode
-
-**Frontend:**
-```bash
+# Terminal 1 (Frontend)
+cd frontend
 npm run dev
-```
-Akses: http://localhost:5173
+# Akses: http://localhost:5173
 
-**Backend:**
-```bash
+# Terminal 2 (Backend)
+cd backend
 go run main.go
+# API: http://localhost:8080
 ```
-API: http://localhost:8080
 
-### Production
+### Production (Windows)
 ```bash
+# Build frontend
+cd frontend
 npm run build
-go build -o app
-./app
+
+# Build backend
+cd ../backend
+go build -o nf-student-hub.exe
+./nf-student-hub.exe
 ```
 
 ---
 
 ## 📁 Struktur Proyek
-css
-Salin kode
+
+```
 NF-Student-HUB/
 ├── frontend/
 │   ├── public/
@@ -211,77 +220,77 @@ NF-Student-HUB/
 
 ## 👥 Role & Permission
 
-| Role | Dashboard | Akademik | Chat | Payment | Admin |
-|------|-----------|----------|------|---------|-------|
-| Mahasiswa | ✅ | ✅ | ✅ | ✅ | ❌ |
-| Dosen | ✅ | ✅ | ✅ | ❌ | ❌ |
-| Admin | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Orang Tua | ✅ | ✅ | ✅ | ✅ | ❌ |
-| UKM | ✅ | ❌ | ✅ | ❌ | ✅ |
-| ORMAWA | ✅ | ❌ | ✅ | ❌ | ✅ |
+| Role       | Dashboard | Akademik | Chat | Payment | Admin |
+|------------|-----------|----------|------|---------|-------|
+| Mahasiswa  | ✅        | ✅       | ✅   | ✅      | ❌    |
+| Dosen      | ✅        | ✅       | ✅   | ❌      | ❌    |
+| Admin      | ✅        | ✅       | ✅   | ✅      | ✅    |
+| Orang Tua  | ✅        | ✅       | ✅   | ✅      | ❌    |
+| UKM        | ✅        | ❌       | ✅   | ❌      | ✅    |
+| ORMAWA     | ✅        | ❌       | ✅   | ❌      | ✅    |
 
 ---
 
-## 📚 API Documentation
+## 📚 Ringkasan API
 
 ### Auth
-```http
-POST /api/auth/login
-POST /api/auth/register
-POST /api/auth/refresh
-```
+- POST /api/auth/login
+- POST /api/auth/register
+- POST /api/auth/refresh
 
 ### Mahasiswa
-```http
-GET  /api/mahasiswa/profile
-GET  /api/mahasiswa/nilai
-POST /api/mahasiswa/pembayaran-ukt
-```
+- GET  /api/mahasiswa/profile
+- GET  /api/mahasiswa/courses
+- GET  /api/mahasiswa/absensi/summary
+- POST /api/mahasiswa/absensi/scan
+- POST /api/mahasiswa/tugas/submit
 
 ### Dosen
-```http
-POST /api/dosen/matkul/:id/tugas
-PUT  /api/dosen/penilaian/:id
-```
+- GET  /api/dosen/profile
+- GET  /api/dosen/courses
+- POST /api/dosen/materi/upload
+- POST /api/dosen/tugas
+- PUT  /api/dosen/tugas/{submissionId}/grade
+
+### Admin & UKT
+- GET  /api/admin/profile
+- GET  /api/admin/ukt/mahasiswa
+- POST /api/ukt/bayar
+- GET  /api/ukt/status/{uuid}
 
 ### Chat
-```http
-WS /ws/chat
-```
+- WS   /ws/chat
+- REST /api/chat/... (conversations, messages, contacts, stats)
 
-📂 **Detail lengkap:** Lihat `/backend/routes`
+Detail lengkap rute: lihat folder [backend/routes](backend/routes).
 
 ---
 
 ## 🔐 Keamanan
+- JWT Authentication (HS256)
+- Password hashing
+- Role-Based Access Control (RBAC)
+- Input validation
+- CORS protection
+- SQL Injection prevention
 
-- ✅ JWT Authentication
-- ✅ Password hashing (bcrypt)
-- ✅ Role-Based Access Control (RBAC)
-- ✅ Input validation
-- ✅ CORS protection
-- ✅ SQL Injection prevention
-
-⚠️ **PENTING:** Jangan commit file `.env` ke repository!
+Penting: jangan commit file `.env`.
 
 ---
 
 ## 🤝 Kontribusi
-
 1. Fork repository
-2. Buat branch fitur (`git checkout -b feature/AmazingFeature`)
-3. Commit sesuai convention (`git commit -m 'feat: Add AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
+2. Buat branch fitur: `git checkout -b feature/AmazingFeature`
+3. Commit sesuai convention: `git commit -m "feat: add AmazingFeature"`
+4. Push: `git push origin feature/AmazingFeature`
 5. Buat Pull Request
 
 ---
 
 ## 📄 Lisensi
-
-Proyek ini dibuat untuk keperluan akademik.  
-Penggunaan komersial memerlukan izin resmi.
+Proyek ini dibuat untuk keperluan akademik. Penggunaan komersial memerlukan izin resmi.
 
 ---
 
-**Last Updated:** Januari 2026  
-**Version:** 1.0.0
+Terakhir diperbarui: Januari 2026  
+Versi: 1.0.0
