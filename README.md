@@ -5,6 +5,14 @@
 ![Stack](https://img.shields.io/badge/Stack-React%20%7C%20Go-orange)
 ![License](https://img.shields.io/badge/License-Academic-lightgrey)
 
+## 📸 Screenshots
+
+Tampilan antarmuka aplikasi NF StudentHub:
+
+### Landing Page & Umum
+![Landing Page](frontend/src/assets/image.png)
+---
+
 NF StudentHub adalah platform digital terintegrasi untuk ekosistem akademik STT Nurul Fikri, yang menghubungkan Mahasiswa, Dosen, Admin, Orang Tua, UKM, dan ORMAWA dalam satu sistem web yang modern, aman, dan scalable.
 
 > One platform. One ecosystem. One academic experience.
@@ -61,13 +69,7 @@ Sistem berbasis role memastikan setiap pengguna hanya mengakses fitur sesuai per
 
 ---
 
-## 📸 Screenshots
 
-Tampilan antarmuka aplikasi NF StudentHub:
-
-### Landing Page & Umum
-![Landing Page](frontend/src/assets/image.png)
----
 
 ## 🛠️ Teknologi
 
